@@ -1,0 +1,40 @@
+CAPI=2:
+name : zipcpu:axi:sdio:1.0.0
+
+filesets:
+  rtl:
+    files:
+      - sdspi/rtl/afifo.v
+      - sdspi/rtl/sdckgen.v
+      - sdspi/rtl/sddma_rxgears.v
+      - sdspi/rtl/sddma.v
+      - src/sdio_axi.v
+      - sdspi/rtl/sdskid.v
+      - sdspi/rtl/sdtxframe.v
+      - sdspi/rtl/spirxdata.v
+      - sdspi/rtl/exportspi.v
+      - sdspi/rtl/sdcmd.v
+      - sdspi/rtl/sddma_s2mm.v
+      - sdspi/rtl/sdfifo.v
+      - sdspi/rtl/sdio.v
+      - sdspi/rtl/sdwb.v
+      - sdspi/rtl/spitxdata.v
+      - sdspi/rtl/xsdddr.v
+      - sdspi/rtl/llsdspi.v
+      - sdspi/rtl/sdaxil.v
+      - sdspi/rtl/sddma_mm2s.v
+      - sdspi/rtl/sddma_txgears.v
+      - sdspi/rtl/sdfrontend.v
+      - sdspi/rtl/sdrxframe.v
+      - sdspi/rtl/spicmd.v
+      - sdspi/rtl/xsdserdes8x.v
+
+    file_type : verilogSource
+
+  dep:
+    depend:
+      - zipcpu:repo:sdspi:1.0.0
+
+targets:
+  default:
+    filesets: [rtl, dep]

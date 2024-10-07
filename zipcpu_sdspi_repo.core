@@ -1,0 +1,20 @@
+CAPI=2:
+name : zipcpu:repo:sdspi:1.0.0
+
+filesets:
+  dep:
+    depend:
+      - AFRL:utility:generators:1.0.0
+
+generate:
+  gen_git:
+    generator: git_pull
+    parameters:
+      repo_url: https://github.com/ZipCPU/sdspi.git
+      repo_dir: sdspi
+      tag: master
+
+targets:
+  default:
+    filesets: [dep]
+    generate: [gen_git]
