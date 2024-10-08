@@ -7,6 +7,7 @@ filesets:
       - sdspi/rtl/sdckgen.v
       - sdspi/rtl/sddma_rxgears.v
       - src/sddma_axi.v
+      - src/sddma_top_axi.v
       - src/sdio_axi.v
       - sdspi/rtl/sdskid.v
       - sdspi/rtl/sdtxframe.v
