@@ -14,7 +14,6 @@ filesets:
       - sdspi/rtl/sdcmd.v
       #- sdspi/rtl/sddma_s2mm.v
       - sdspi/rtl/sdfifo.v
-      - sdspi/rtl/sdio.v
       - sdspi/rtl/sdaxil.v
       - sdspi/rtl/xsdddr.v
       #- sdspi/rtl/sddma_mm2s.v
