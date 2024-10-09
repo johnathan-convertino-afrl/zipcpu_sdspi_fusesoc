@@ -6,9 +6,9 @@ filesets:
     files:
       - sdspi/rtl/sdckgen.v
       - sdspi/rtl/sddma_rxgears.v
-      - src/sddma_axi.v
-      - src/sdio_top_axi.v
-      - src/sdio_axi.v
+      - sdspi/rtl/sddma.v
+      - sdspi/rtl/sdio_top.v
+      - sdspi/rtl/sdio.v
       - sdspi/rtl/sdskid.v
       - sdspi/rtl/sdtxframe.v
       - sdspi/rtl/sdcmd.v
@@ -21,8 +21,10 @@ filesets:
       - sdspi/rtl/sdfrontend.v
       - sdspi/rtl/sdrxframe.v
       - sdspi/rtl/xsdserdes8x.v
-
     file_type : verilogSource
+
+  vivado_tcl:
+      - tcl/define_axi.tcl : {file_type : tclSource}
 
   dep:
     depend:
@@ -30,4 +32,4 @@ filesets:
 
 targets:
   default:
-    filesets: [rtl, dep]
+    filesets: [rtl, dep "tool_vivado ? (vivado_tcl)"]
