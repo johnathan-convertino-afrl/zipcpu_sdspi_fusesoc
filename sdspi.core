@@ -1,4 +1,5 @@
 CAPI=2:
+
 name : zipcpu:axi:sdio:1.0.0
 
 filesets:
@@ -12,11 +13,9 @@ filesets:
       - sdspi/rtl/sdskid.v
       - sdspi/rtl/sdtxframe.v
       - sdspi/rtl/sdcmd.v
-      #- sdspi/rtl/sddma_s2mm.v
       - sdspi/rtl/sdfifo.v
       - sdspi/rtl/sdaxil.v
       - sdspi/rtl/xsdddr.v
-      #- sdspi/rtl/sddma_mm2s.v
       - sdspi/rtl/sddma_txgears.v
       - sdspi/rtl/sdfrontend.v
       - sdspi/rtl/sdrxframe.v
@@ -24,6 +23,7 @@ filesets:
     file_type : verilogSource
 
   vivado_tcl:
+    files:
       - tcl/define_axi.tcl : {file_type : tclSource}
 
   dep:
@@ -32,4 +32,4 @@ filesets:
 
 targets:
   default:
-    filesets: [rtl, dep "tool_vivado ? (vivado_tcl)"]
+    filesets: [rtl, dep, "tool_vivado ? (vivado_tcl)"]
